@@ -39,7 +39,9 @@ pip install -r requirements.txt
 ## Запуск    
 Основной код запускается из файла solver.py.
 ```
-python main.py input.txt
+python solver.py
 ```
+Далее нужно ввести имя файла, выбрать тип задачи и если нужно ввести дополнительные параметры.
+
 
 
