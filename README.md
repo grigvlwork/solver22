@@ -36,7 +36,7 @@
 ```
 pip install -r requirements.txt
 ```
-##Запуск  
+## Запуск    
 Основной код запускается из файла solver.py.
 ```
 python main.py input.txt
