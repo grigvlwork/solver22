@@ -377,7 +377,11 @@ def solver():
           '   при котором выполнение всех процессов завершилось не ранее чем за T мс.')
     print('9) Определите максимально возможное целочисленное t (время выполнения процесса), \n'
           '   при котором выполнение всех процессов завершилось за T мс.')
-    type_of_task = int(input('Введите число 1..9:'))
+    print('10) Найти максимальную продолжительность времени, в течение которого возможно одновременное \n'
+          '   выполнение максимального количества процессов, при условии, что все независимые друг от \n'
+          '   друга процессы могут выполняться параллельно(без ограничения минимального времени)')
+
+    type_of_task = int(input('Введите число 1..10:'))
     if type_of_task not in [6, 8, 9]:
         N, processes = parse_file(file)
         critical_paths, time_limit = find_all_critical_paths(processes)
@@ -424,6 +428,15 @@ def solver():
         N = len(processes.keys()) + 1
         T = int(input('Введите время за которое, эти процессы должны быть выполнены:'))
         print(f'Максимальное время t:{maximal_t_for_N_processes_on_T(processes, N, T, t_row)}')
+    elif type_of_task == 10:
+        # Иглин 4 пробник, файл 22_4.txt Максимальное время 9 для 6 процессов
+        coeff = float(input('Введите коэффициент для максимального времени\n'
+                            '(лучше начать от 1.0 и постепенно увеличивать до 2.0):'))
+        peak = maximize_peak_parallelism(processes, int(time_limit * coeff))
+        start_times, duration = maximize_peak_duration(processes, int(time_limit * coeff), peak)
+        print(f"Максимальная продолжительность {peak} процессов:", duration)
+        print('Время начала процессов:')
+        pprint(start_times)
 
 
 
