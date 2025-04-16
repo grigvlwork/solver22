@@ -446,5 +446,6 @@ solver()
 # отрезков их можно попробовать решить уменьшив длительность в 100-1000 раз
 # и посмотреть, как будут располагаться процессы, а затем перейти к исходным.
 # https://education.yandex.ru/ege/task/d4658b6e-671b-4165-8c34-d4607b247c2b
+# файл 22.txt с округлением
 # https://education.yandex.ru/ege/task/1b0cd2c9-047a-4644-91ce-8e1f38b23da9
 # https://education.yandex.ru/ege/task/250cf1cc-5326-4025-b07c-9f4862d5904e
